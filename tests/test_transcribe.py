@@ -25,11 +25,27 @@ def test_transcribe():
     """
     Write your unit test for the transcribe function here.
     """
-    pass
+    test_seq = {"ATGC":"UACG",
+                "GCGA":"CGCU",
+                "AAAA":"UUUU"}
+    
+    for dna,rna in test_seq.items():
+
+        rna_seq = transcribe(dna)
+        assert rna_seq == rna, f"transcribe func doesn't work"
+    
 
 
 def test_reverse_transcribe():
     """
     Write your unit test for the reverse transcribe function here.
     """
-    pass
+    test_seq = {"ATGC":"GCAU",
+                "GCGA":"UCGC",
+                "AAAA":"UUUU"}
+    
+    for dna,rna in test_seq.items():
+
+        rna_seq = reverse_transcribe(dna)
+        assert rna_seq == rna, f"reverse_transcribe func doesn't work"
+        
