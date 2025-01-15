@@ -52,6 +52,7 @@ def test_FastaParser():
     #assert len(blank_seqs) == 0, "Blank file should return no records"
 
 
+
     # Test on corrupted FASTA file
     #bad_seqs = [record for record in parser_b]
     #assert bad_seqs[0][1] != '<', "FASTA corrupted"
