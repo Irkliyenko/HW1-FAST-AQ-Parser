@@ -8,21 +8,23 @@ def main():
     """
     The main function
     """
+    fasta_f = "data/test.fa"
+    fastq_f = "data/test.fq"
     # Create instance of FastaParser
+    fasta = FastaParser(fasta_f)
     # Create instance of FastqParser
-        
+    fastq = FastqParser(fastq_f)   
     # For each record of FastaParser, Transcribe the sequence
     # and print it to console
+    for record in fasta:
+        print(f"Transcribed FASTA: {transcribe(record[1])}")
+        print(f"Reverse transcribed FASTA: {reverse_transcribe(record[1])}")
        
     # For each record of FastqParser, Transcribe the sequence
     # and print it to console
-
-
-    # For each record of FastaParser, Reverse Transcribe the sequence
-    # and print it to console
-       
-    # For each record of FastqParser, Reverse Transcribe the sequence
-    # and print it to console
+    for record in fastq:
+        print(f"Transcribed FASTQ: {transcribe(record[1])}")
+        print(f"Reverse transcribed FASTQ: {reverse_transcribe(record[1])}")
 
 
 """
